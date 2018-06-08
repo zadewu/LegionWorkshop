@@ -15,46 +15,30 @@
 		<div id="menu-bar"></div>
 	</ui:define>
 	<ui:define name="content">
-		<div id="content">
-			<div class="body">
-				<div class="action">
-					<div class="row">
-						<div class="input-field col xl3 l3 m3 s3">
-							<input placeholder="Search" id="" type="text" class="validate" />
-						</div>
+		<h1 id="customerid" align="center">Customers</h1>
+		<p:dataTable widgetVar="customerTable" var="customer"
+			value="#{customerController.customers}" styleClass="myTable"
+			rowIndexVar="count" reflow="true">
 
-						<div class="col xl3 l3 m3 s3">
-							<h:form>
-								<p:commandButton value="Search">
-								</p:commandButton>
-							</h:form>
-						</div>
-					</div>
+			<f:facet name="header">
+				<p:outputPanel>
+					<h:outputText value="Search all fields:" />
+					<p:inputText id="globalFilter"
+						onkeyup="PF('customerTable').filter()" style="width:150px"
+						placeholder="Search" />
+				</p:outputPanel>
+			</f:facet>
+			<p:column filterBy="#{customer.name}" headerText="Name">
+				<h:outputText value="#{customer.name}" />
+			</p:column>
 
-
-
-
-				</div>
-				<p:dataTable>
-					<p:column headerText="Id">
-						<h:outputText value="1" />
-					</p:column>
-
-					<p:column headerText="Year">
-						<h:outputText value="2" />
-					</p:column>
-
-					<p:column headerText="Brand">
-						<h:outputText value="hcm" />
-					</p:column>
-
-					<p:column headerText="Color">
-						<h:outputText value="Adsadsad" />
-					</p:column>
-				</p:dataTable>
-
-			</div>
-		</div>
+			<p:column filterBy="#{customer.address}" headerText="Address">
+				<h:outputText value="#{customer.address}" />
+			</p:column>
+			<p:column filterBy="#{customer.country}" headerText="Country">
+				<h:outputText value="#{customer.country}" />
+			</p:column>
+		</p:dataTable>
 	</ui:define>
 
 	<ui:define name="inputJsLink">
