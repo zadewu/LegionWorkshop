@@ -12,19 +12,54 @@
 	<ui:define name="title">workshop</ui:define>
 	<ui:define name="header">
 		<a href="" id="product-name">workshop</a>
-		<div id="menu-bar">
-			
-		</div>
+		<div id="menu-bar"></div>
 	</ui:define>
 	<ui:define name="content">
-		<div class="ui-g row">asdsadsad</div>
-		
-		<p:commandButton value="submit">
-				adsad
-		</p:commandButton>
+		<div id="content">
+			<div class="body">
+				<div class="action">
+					<div class="row">
+						<div class="input-field col xl3 l3 m3 s3">
+							<input placeholder="Search" id="" type="text" class="validate" />
+						</div>
+
+						<div class="col xl3 l3 m3 s3">
+							<h:form>
+								<p:commandButton value="Search">
+								</p:commandButton>
+							</h:form>
+						</div>
+					</div>
+
+
+
+
+				</div>
+				<p:dataTable>
+					<p:column headerText="Id">
+						<h:outputText value="1" />
+					</p:column>
+
+					<p:column headerText="Year">
+						<h:outputText value="2" />
+					</p:column>
+
+					<p:column headerText="Brand">
+						<h:outputText value="hcm" />
+					</p:column>
+
+					<p:column headerText="Color">
+						<h:outputText value="Adsadsad" />
+					</p:column>
+				</p:dataTable>
+
+			</div>
+		</div>
 	</ui:define>
 
 	<ui:define name="inputJsLink">
+
+
 		<h:outputScript library="js" name="materialize1.min.js" />
 		<h:outputScript library="js" name="scripts.js" />
 	</ui:define>
