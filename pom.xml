@@ -12,13 +12,14 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<primefaces.version>6.2</primefaces.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>${primefaces.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
@@ -26,7 +27,6 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-	
 	<build>
 		<finalName>workshop</finalName>
 	</build>
