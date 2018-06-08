@@ -32,5 +32,10 @@ public class CustomerController implements Serializable{
 		this.customers = customers;
 	}
 	
+	public List<CustomerBOM> seachFunction(String search) {
+		List<CustomerBOM> customers = new ArrayList<>();
+		
+		return customers;
+	}
 	
 }
