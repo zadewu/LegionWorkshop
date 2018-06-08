@@ -16,31 +16,42 @@
 	</ui:define>
 	<ui:define name="content">
 		<h1 align="center">Customers</h1>
-		<h:form>
-			<p:dataTable var="customer" widgetVar="customersTable"
-				value="#{customerController.customers}" 
-				filteredValue="#{customerController.filteredCustomer}">
+		<div class="table-container">
+			<div class="ui-g">
+				<div class="ui-xl-12 ui-lg-12 ui-md-12 ui-sm-12">
+					<h:form>
+						<p:dataTable var="customer" widgetVar="customersTable"
+							value="#{customerController.customers}"
+							filteredValue="#{customerController.filteredCustomer}">
 
-				<f:facet name="header">
-					<p:outputPanel>
-						<h:outputText value="Search all fields:" />
-						<p:inputText id="globalFilter" onkeyup="PF('customersTable').filter()"
-							style="width:150px" placeholder="Enter keyword" />
-					</p:outputPanel>
-				</f:facet>
-				<p:column filterStyle="display:none" headerText="Name" filterBy="#{customer.name}" filterMatchMode="contains">
-					<h:outputText value="#{customer.name}" />
-				</p:column>
+							<f:facet name="header">
+								<div class="search">
+									<p:outputPanel>
+										<h:outputText value="Search all fields: " />
+										<p:inputText id="globalFilter"
+											onkeyup="PF('customersTable').filter()" style="width:150px"
+											placeholder="Enter keyword" />
+									</p:outputPanel>
+								</div>
+							</f:facet>
+							<p:column filterStyle="display:none" headerText="Name"
+								filterBy="#{customer.name}" filterMatchMode="contains">
+								<h:outputText value="#{customer.name}" />
+							</p:column>
 
-				<p:column filterStyle="display:none" headerText="Address" filterBy="#{customer.address}" filterMatchMode="contains">
-					<h:outputText value="#{customer.address}" />
-				</p:column>
-				<p:column filterStyle="display:none" headerText="Country" filterBy="#{customer.country}" filterMatchMode="contains">
-					<h:outputText value="#{customer.country}" />
-				</p:column>
-			</p:dataTable>
-		</h:form>
-
+							<p:column filterStyle="display:none" headerText="Address"
+								filterBy="#{customer.address}" filterMatchMode="contains">
+								<h:outputText value="#{customer.address}" />
+							</p:column>
+							<p:column filterStyle="display:none" headerText="Country"
+								filterBy="#{customer.country}" filterMatchMode="contains">
+								<h:outputText value="#{customer.country}" />
+							</p:column>
+						</p:dataTable>
+					</h:form>
+				</div>
+			</div>
+		</div>
 	</ui:define>
 
 	<ui:define name="inputJsLink">
