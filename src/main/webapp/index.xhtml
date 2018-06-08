@@ -12,16 +12,31 @@
 	<ui:define name="title">workshop</ui:define>
 	<ui:define name="header">
 		<a href="" id="product-name">workshop</a>
-		<div id="menu-bar">
-			
-		</div>
+		<div id="menu-bar"></div>
 	</ui:define>
 	<ui:define name="content">
-		<div class="ui-g row">asdsadsad</div>
-		
-		<p:commandButton value="submit">
-				adsad
-		</p:commandButton>
+		<h1 id="customerid" align="center">Customers</h1>
+		<p:dataTable widgetVar="customerTable" var="customer" value="#{customerController.customers}"
+			styleClass="myTable" rowIndexVar="count" reflow="true">
+
+			<f:facet name="header">
+				<p:outputPanel>
+					<h:outputText value="Search all fields:" />
+					<p:inputText id="globalFilter" onkeyup="PF('customerTable').filter()"
+						style="width:150px" placeholder="Search" />
+				</p:outputPanel>
+			</f:facet>
+			<p:column filterBy="#{customer.name}" headerText="Name">
+				<h:outputText value="#{customer.name}" />
+			</p:column>
+
+			<p:column filterBy="#{customer.address}" headerText="Address">
+				<h:outputText value="#{customer.address}" />
+			</p:column>
+			<p:column filterBy="#{customer.country}" headerText="Country">
+				<h:outputText value="#{customer.country}" />
+			</p:column>
+		</p:dataTable>
 	</ui:define>
 
 	<ui:define name="inputJsLink">
