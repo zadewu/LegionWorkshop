@@ -18,7 +18,16 @@ public class CustomerController implements Serializable{
 	CustomerMapper customerMapper;
 	
 	private List<CustomerBOM> customers = new ArrayList<>();
+	private List<CustomerBOM> filteredCustomer;
 	
+	public List<CustomerBOM> getFilteredCustomer() {
+		return filteredCustomer;
+	}
+
+	public void setFilteredCustomer(List<CustomerBOM> filteredCustomer) {
+		this.filteredCustomer = filteredCustomer;
+	}
+
 	@PostConstruct
 	public void init() {
 		customers = customerMapper.toBoms(customerMapper.showAllCustomer());
@@ -34,8 +43,8 @@ public class CustomerController implements Serializable{
 	
 	public List<CustomerBOM> seachFunction(String search) {
 		List<CustomerBOM> customers = new ArrayList<>();
-		
 		return customers;
 	}
+	
 	
 }
